@@ -76,6 +76,27 @@ Welcome to APi service
     </div>
 </section>
 
+<div class="container">
+    <div class="py-5">
+        <div class="row">
+            {% for post in object_list %}
+            <div class="col-md-4">
+                <a class="text-dark" href="{{post.get_absolute_url}}">
+                    <div class="card mb-4 shadow mb-5 bg-white rounded">
+                        <img class="card-img-top" src="{{post.image.url}}" alt="{{ post.title}}">
+                        <div class="card-bodyd-flex justify-content-between">
+                            <p> {{post.title|truncatechars:50}} </p>
+                            <p>#{{post.id}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
 
 
 

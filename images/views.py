@@ -7,4 +7,4 @@ from .models import Images
 
 class ImagesListView(ListView):
     model = Images
-    template_name = 'images/all_images.html'
+    template_name = 'images/all_image.html'
