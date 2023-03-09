@@ -5,7 +5,10 @@ from django.utils import timezone
 from django.contrib.auth.models import User 
 
 def user_directory_path(instance,filename):
-    return f'images/{filename}/'
+    # remove any trailing slashes from the filename
+    filename = filename.rstrip('/')
+    # return the desired path for the uploaded image
+    return f"images/{filename}"
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
