@@ -33,8 +33,86 @@ Welcome to APi service
     .fs14 {
         font-size: 14px;
     }
+
+
+    /* Style for the code block container */
+    pre.js-api-example {
+      background-color: #000000;
+      color: #FFFFFF; /* Add this line to change the text color to white */
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 10px;
+    }
+    
+    /* Style for the URL */
+    .js-api-example-url {
+      color: #0070c0;
+    }
+    
+    /* Style for the code */
+    .js-api-example-code {
+      font-family: 'Courier New', Courier, monospace;
+    }
+    
+
+
+
+
+
 </style>
+<div class="container">
+
+    <div class="container py-4">
+        <div class="p-3 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">Dayana Image API</h1>
+              
+              <p class="col-md-8 fs-4">Get access to our entire photo base on any category.
+                It’s free and seamlessly integrates with just a few lines of code. Get started </p>
+          
+              <button class="btn  btn-lg" type="button" style="color:white;background:#32cd32">Get Started</button>
+              <button class="btn  btn-lg" type="button" style="color:white;background:black">Documentation</button>
+            </div>
+          </div>
+    <div> 
+
+
+</div>
+
+
+
+<div class="container col-12 col-md-12">
+
+    <pre class="js-api-example">
+        <span class="js-api-example-url">api.dayana/v1/curated</span>
+        <code class="js-api-example-code">
+          {
+            "page": 1,
+            "per_page": 4,
+            "total_results": 200,
+            "url": "https://api.dayana.com/v1/curated",
+            "next_page": "https://api.dayana.com/v1/curated?page=2"
+            "photos": [
+              {
+                "width": 2800,
+                "height": 3500,
+                "alt": "an-api-Documentation-design-image",
+                "User": "Andy Vu",
+                "src": {
+                  "original": "https://*.jpg",
+                }
+              }
+            ]
+          }
+        </code>
+      </pre>
+      
+</div>
+
+
+
 <div class="container" style="max-width: 1240px;">
+
     <div class="row pt-5">
         <div class="col-12 col-md-6">
             <section class="jumbotron bg-white">
@@ -56,6 +134,11 @@ Welcome to APi service
                 </div>
             </section>
         </div>
+
+        
+        <img class="shadow  bg-white rounded" src="http://127.0.0.1:8000/api/id/1" alt="description of the image" width="100%">
+
+
         <div class=" d-none d-md-none d-md-block col-md-6">
             <section class="jumbotron text-center bg-white px-0">
                 <div class="container">
@@ -63,8 +146,12 @@ Welcome to APi service
                 </div>
             </section>
         </div>
+
+
     </div>
 </div>
+
+
 <section class="jumbotron text-center">
     <div class="container" style="max-width: 600px;">
         <h1 class="txt-robo h1">Easy to use placeholders</h1>
@@ -99,3 +186,4 @@ Welcome to APi service
 
 {% include "base/footer.html" %} 
 {% endblock %}
+
