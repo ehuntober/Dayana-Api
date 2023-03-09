@@ -3,7 +3,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from api.custom_renderers import JPEGRenderer, PNGRenderer
 from rest_framework.response import Response
-from images.models import Image
+from images.models import Images
 
 
 class ImageAPIView(generics.RetrieveAPIView):
