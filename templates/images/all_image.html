@@ -1,96 +1,74 @@
+{% extends "../base/base.html" %} {% block title %} Welcome to APi service  {% endblock%}
 
-{% extends "../base/base.html" %}
-{% block title %}
-Welcome to APi service
-{% endblock %}
-{% block content %}
+ {% block content %}
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@500&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@500&display=swap");
 
-    h1 {
-        font-family: 'Work Sans', sans-serif;
-        font-weight: 600;
-    }
+  h1 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+  }
 
-    .txt-robo {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500
-    }
+  .txt-robo {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+  }
 
-    p {
-        font-family: 'Open Sans', sans-serif;
-    }
+  p {
+    font-family: "Open Sans", sans-serif;
+  }
 
-    h4 {
-        font-weight: 300
-    }
+  h4 {
+    font-weight: 300;
+  }
 
-    .bg-dark {
-        background-color: #000000 !important;
-    }
+  .bg-dark {
+    background-color: #000000 !important;
+  }
 
-    .fs14 {
-        font-size: 14px;
-    }
+  .fs14 {
+    font-size: 14px;
+  }
+
+
+ pre {
+    background-color: black;
+    color: #FFFFFF; /* Add this line to change the text color to white */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    font-size:16px;
+  }
 </style>
 
-<section class="jumbotron text-center">
-    <div class="container" style="max-width: 600px;">
-        <h1 class="txt-robo h1">Easy to use placeholders</h1>
-        <p>Just find an image and create a URL, not quite implemented width and height yet!</p>
+<section class="jumbotron text-center py-3">
+  <div class="container" style="max-width: 600px">
+    <h1 class="txt-robo h1">Easy to use and fast Implementation </h1>
+    <p>
+      Just find an image and create a URL for it.
+    </p>
 
-        <pre class="bg-white pt-3"><code><a href="http://127.0.0.1:8000/api/id/2">https://127.0.0.1:8000/api/id/2</a></code>
+    <pre
+      class="bg-white pt-3"
+    ><code><a href="http://127.0.0.1:8000/api/id/2">https://127.0.0.1:8000/api/id/2</a></code>
             </pre>
-
-    </div>
+  </div>
 </section>
 
-
 <div class="container" style="margin-bottom: 30px">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        {% for post in object_list %}
-      <div class="col">
-        <div class="card h-100">
-          <img src="{{post.image.url}}" class="card-img-top" alt="Image 1">
-        </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for post in object_list %}
+    <div class="col">
+      <div class="card h-100">
+        <img src="{{post.image.url}}" class="card-img-top" alt="Image 1" />
       </div>
-
-      {% endfor %}
-     
     </div>
 
-    
+    {% endfor %}
+  </div>
 </div>
-  
-  
-
-
-
-
-{% comment %} <div class="container">
-    <div class="py-5">
-        <div class="row">
-            {% for post in object_list|slice:":3" %}
-            <div class="col-md-4">
-                <a class="text-dark" href="{{post.get_absolute_url}}">
-                    <div class="card mb-4 shadow mb-5 bg-white rounded">
-                        <img class="card-img-top" src="{{post.image.url}}" alt="{{ post.title}}">
-                        <div class="card-bodyd-flex justify-content-between">
-                            <p> {{post.title|truncatechars:50}} </p>
-                            <p>#{{post.id}}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            {% endfor %}
-
-        </div>
-    </div>
-</div> {% endcomment %}
-
-
-
-
 {% include "base/footer.html" %} 
-{% endblock %}
+{%endblock %}
+{% include "base/footer.html" %} 
+{% comment %} {% endblock %} {% endcomment %}
