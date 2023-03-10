@@ -39,5 +39,33 @@ class PersonalImages(generics.ListAPIView):
     def get_queryset(self):
         return Images.objects.filter(author=self.request.user)
     
+class PostImage(generics.CreateAPIView):
+    serializer_class = ImageSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    parser_class = (FileUploadParser,)
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+        
+
+class DeleteImage(generics.DestroyAPIView):
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+        return Images.object.filter(author=self.request.user) 
+    
+    def perform_destroy(self,instance):
+        instance.delete()
+        
+        
+class UpdateImage(generics.UpdateAPIView):
+    serializer_class = ImageSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return Image.objects.filter(owner=self.request.user)
+    
+    
+    
     
 
