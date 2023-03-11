@@ -15,6 +15,7 @@ from django.shortcuts import get_object_or_404
 from .serializers import ImageSerializer
 from rest_framework.decorators import api_view , APIView , permission_classes
 from rest_framework.request import Request 
+from rest_framework import status
 
 
 
@@ -67,12 +68,13 @@ class UpdateImage(generics.UpdateAPIView):
 
     def get_queryset(self):
         return Images.objects.filter(author=self.request.user)
+    
 
 @api_view(http_method_names=['DELETE'])
-def delete_image(request:Request,post_id:int):
+def delete_image(request:Request,id:int):
     Image= get_object_or_404(Images,pk=id)
     
-    Imge.delete()
+    Image.delete()
     
     return Response(status=status.HTTP_204_NO_CONTENT)
     
