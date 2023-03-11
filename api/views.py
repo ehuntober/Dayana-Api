@@ -63,7 +63,7 @@ class UpdateImage(generics.UpdateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return Image.objects.filter(owner=self.request.user)
+        return Images.objects.filter(author=self.request.user)
     
     
     
