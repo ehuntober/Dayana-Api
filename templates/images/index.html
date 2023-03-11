@@ -1,5 +1,10 @@
 
+
+
+
+
 {% extends "../base/base.html" %}
+{% load static %}
 {% block title %}
 Welcome to APi service
 {% endblock %}
@@ -95,10 +100,10 @@ Welcome to APi service
             "next_page": "https://api.dayana.com/v1/curated?page=2"
             "photos": [
               {
-                "width": 2800,
-                "height": 3500,
+                "width": 180,
+                "height": 300,
                 "alt": "an-api-Documentation-design-image",
-                "User": "Andy Vu",
+                "User": "admin",
                 "src": {
                   "original": "https://*.jpg",
                 }
@@ -127,7 +132,7 @@ Welcome to APi service
   
   
          <div class="col-md-8">
-            <img class="shadow  bg-white rounded" src="http://127.0.0.1:8000/api/id/1" alt="description of the image" width="100%">
+            <img class="shadow  bg-white rounded" src="{% static 'image/integration.jpg' %}" alt="description of the image" width="100%">
           
          </div>
   
