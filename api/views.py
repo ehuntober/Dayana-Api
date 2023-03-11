@@ -52,7 +52,7 @@ class DeleteImage(generics.DestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     
     def get_queryset(self):
-        return Images.object.filter(author=self.request.user) 
+        return Images.objects.filter(author=self.request.user) 
     
     def perform_destroy(self,instance):
         instance.delete()
