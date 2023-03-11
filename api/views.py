@@ -13,6 +13,9 @@ from rest_framework.response import Response
 from rest_framework.parsers import FileUploadParser 
 from django.shortcuts import get_object_or_404 
 from .serializers import ImageSerializer
+from rest_framework.decorators import api_view , APIView , permission_classes
+from rest_framework.request import Request 
+
 
 
 class ImageAPIView(generics.RetrieveAPIView):
@@ -48,14 +51,14 @@ class PostImage(generics.CreateAPIView):
         serializer.save(author=self.request.user)
         
 
-class DeleteImage(generics.DestroyAPIView):
-    permission_classes = [permissions.IsAuthenticated]
+# class DeleteImage(generics.DestroyAPIView):
+#     permission_classes = [permissions.IsAuthenticated]
     
-    def get_queryset(self):
-        return Images.objects.filter(author=self.request.user) 
+#     def get_queryset(self):
+#         return Images.objects.filter(author=self.request.user) 
     
-    def perform_destroy(self,instance):
-        instance.delete()
+#     def perform_destroy(self,instance):
+#         instance.delete()
         
         
 class UpdateImage(generics.UpdateAPIView):
@@ -64,6 +67,14 @@ class UpdateImage(generics.UpdateAPIView):
 
     def get_queryset(self):
         return Images.objects.filter(author=self.request.user)
+
+@api_view(http_method_names=['DELETE'])
+def delete_image(request:Request,post_id:int):
+    Image= get_object_or_404(Images,pk=id)
+    
+    Imge.delete()
+    
+    return Response(status=status.HTTP_204_NO_CONTENT)
     
     
     
