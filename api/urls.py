@@ -13,4 +13,3 @@ urlpatterns = [
     
 ]
 
-#url update
