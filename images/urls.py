@@ -15,4 +15,4 @@ urlpatterns = [
 ]
 
 urlpatterns += staticfiles_urlpatterns()
- #url update
+
