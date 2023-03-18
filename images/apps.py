@@ -6,4 +6,3 @@ class ImagesConfig(AppConfig):
     name = 'images'
 
 
- #url update
