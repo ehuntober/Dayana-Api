@@ -6,3 +6,5 @@ class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Images
         fields = ['id','category','title','alt','image','slug','created','author','status']
+        
+        #url update
