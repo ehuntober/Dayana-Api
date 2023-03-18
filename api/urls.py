@@ -12,3 +12,5 @@ urlpatterns = [
     path('images/update/<int:pk>/', UpdateImage.as_view(), name='update-image'),
     
 ]
+
+#url update
