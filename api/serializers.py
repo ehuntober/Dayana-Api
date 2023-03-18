@@ -7,4 +7,4 @@ class ImageSerializer(serializers.ModelSerializer):
         model = Images
         fields = ['id','category','title','alt','image','slug','created','author','status']
         
-        #url update
+       
